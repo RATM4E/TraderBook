@@ -69,3 +69,8 @@ packages/
 TestResults/
 *.coverage
 *.coveragexml
+
+data/
+.vscode/
+test.py
+*.txt
