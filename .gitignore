@@ -1,0 +1,71 @@
+# ─── Python ───────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+MANIFEST
+
+# ─── Virtual environments ─────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# ─── IDEs ────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ─── Streamlit ───────────────────────────────────────────
+.streamlit/secrets.toml
+
+# ─── User data (personal trading data — never commit!) ───
+data/
+trades.csv
+setups.csv
+groups.csv
+language.txt
+timezone.txt
+reward_risk.txt
+screenshots/
+setup_images/
+backups/
+logs/
+*.log
+
+# ─── Build artifacts (PyInstaller / Nuitka) ──────────────
+*.spec
+dist/
+build/
+*.exe
+*.pyd
+
+# ─── C# / .NET (future port) ────────────────────────────
+*.user
+*.suo
+.vs/
+bin/
+obj/
+*.nupkg
+*.snupkg
+packages/
+TestResults/
+*.coverage
+*.coveragexml
