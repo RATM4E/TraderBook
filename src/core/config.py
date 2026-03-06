@@ -24,35 +24,46 @@ from .paths import (
 # Directories
 # ------------------------------------------------------------------#
 
-APP_DIR = get_app_dir()  # read-only code location
+APP_DIR = get_app_dir()       # read-only code location
 USER_DATA_DIR = load_user_data_dir()  # writable; typically ~/Documents/TraderBook
 
-# For backward compatibility, we expose DATA_DIR = USER_DATA_DIR (old code expected "data/")
-DATA_DIR = USER_DATA_DIR
+# Aliases used across the codebase
+BASE_DIR = APP_DIR            # src/ root — for locating locales, assets
+DATA_DIR = USER_DATA_DIR      # writable user data
 
 # ------------------------------------------------------------------#
 # Data files
 # ------------------------------------------------------------------#
-TRADES_FILE = DATA_DIR / "trades.csv"
-SETUPS_FILE = DATA_DIR / "setups.csv"
-GROUPS_FILE = DATA_DIR / "groups.csv"
+TRADES_FILE  = DATA_DIR / "trades.csv"
+SETUPS_FILE  = DATA_DIR / "setups.csv"
+GROUPS_FILE  = DATA_DIR / "groups.csv"
 
-LANGUAGE_FILE = DATA_DIR / "language.txt"
-TIMEZONE_FILE = DATA_DIR / "timezone.txt"
+LANGUAGE_FILE    = DATA_DIR / "language.txt"
+TIMEZONE_FILE    = DATA_DIR / "timezone.txt"
 REWARD_RISK_FILE = DATA_DIR / "reward_risk.txt"
 
 # ------------------------------------------------------------------#
 # Subdirectories
 # ------------------------------------------------------------------#
-LOGS_DIR = DATA_DIR / "logs"
-SCREENSHOTS_DIR = DATA_DIR / "screenshots"
+LOGS_DIR          = DATA_DIR / "logs"
+SCREENSHOTS_DIR   = DATA_DIR / "screenshots"
+SETUP_IMAGES_DIR  = DATA_DIR / "setup_images"
+BACKUPS_DIR       = DATA_DIR / "backups"
+
 ENTRY_SCREENSHOTS_DIR = SCREENSHOTS_DIR / "screenshots_entry"
-EXIT_SCREENSHOTS_DIR = SCREENSHOTS_DIR / "screenshots_exit"
-SETUP_IMAGES_DIR = DATA_DIR / "setup_images"
-BACKUPS_DIR = DATA_DIR / "backups"
+EXIT_SCREENSHOTS_DIR  = SCREENSHOTS_DIR / "screenshots_exit"
+
+# Aliases for backward compatibility
+SCREENSHOTS_ENTRY_DIR = ENTRY_SCREENSHOTS_DIR
+SCREENSHOTS_EXIT_DIR  = EXIT_SCREENSHOTS_DIR
 
 # ------------------------------------------------------------------#
-# CSV schema columns (unchanged)
+# Formats
+# ------------------------------------------------------------------#
+DATE_FORMAT = "%Y-%m-%d"
+
+# ------------------------------------------------------------------#
+# CSV schema columns
 # ------------------------------------------------------------------#
 TRADES_COLUMNS = [
     "id", "market", "pair", "entry_date", "entry_price", "entry_size",
@@ -66,7 +77,9 @@ TRADES_COLUMNS = [
     "notes",
 ]
 SETUPS_COLUMNS = [
-    "id", "setup_name", "description", "image_1", "image_1_desc", "image_2", "image_2_desc",
+    "id", "setup_name", "description",
+    "image_1", "image_1_desc",
+    "image_2", "image_2_desc",
 ]
 GROUPS_COLUMNS = [
     "group_name", "description",

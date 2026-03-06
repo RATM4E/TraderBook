@@ -45,3 +45,7 @@ def setup_logger(name: str, logfile: Path) -> logging.Logger:
 app_logger = setup_logger("app", config.LOGS_DIR / "app.log")
 backup_logger = setup_logger("backup", config.LOGS_DIR / "backup.log")
 csv_logger = setup_logger("csv", config.LOGS_DIR / "CSV.log")
+
+
+# Alias для обратной совместимости
+logger = app_logger
