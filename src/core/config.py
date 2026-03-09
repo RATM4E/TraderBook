@@ -66,18 +66,24 @@ DATE_FORMAT = "%Y-%m-%d"
 # CSV schema columns
 # ------------------------------------------------------------------#
 TRADES_COLUMNS = [
-    "id", "market", "pair", "entry_date", "entry_price", "entry_size",
-    "stop_loss", "tp1", "tp1_perc", "tp2", "tp2_perc", "tp3", "tp3_perc",
-    "result_price", "release_date", "result", "profit_percent", "avg_rr",
-    "timeframe", "status", "direction", "trade_type", "session",
-    "entry_screenshot_1", "entry_screenshot_1_desc",
-    "entry_screenshot_2", "entry_screenshot_2_desc",
-    "exit_screenshot_1", "exit_screenshot_1_desc",
-    "exit_screenshot_2", "exit_screenshot_2_desc",
-    "notes",
+    "trade_deal", "market", "pair",
+    "entry_date", "release_date",
+    "entry_point", "stop_loss",
+    "take_profit_one", "take_profit_one_percent",
+    "take_profit_two", "take_profit_two_percent",
+    "take_profit_three", "take_profit_three_percent",
+    "risk_percent", "tick_size",
+    "trade_setup", "trade_setup_group",
+    "timeframe", "type", "session",
+    "avg_rr", "profit_percent", "result", "status",
+    "trend_tag", "notion_text", "screenshot",
+    "entry_screenshot_1", "entry_screenshot_2", "entry_screenshot_3",
+    "entry_description_1", "entry_description_2", "entry_description_3",
+    "exit_screenshot_1", "exit_screenshot_2", "exit_screenshot_3",
+    "exit_description_1", "exit_description_2", "exit_description_3",
 ]
 SETUPS_COLUMNS = [
-    "id", "setup_name", "description",
+    "id", "setup_name", "group_name", "description",
     "image_1", "image_1_desc",
     "image_2", "image_2_desc",
 ]

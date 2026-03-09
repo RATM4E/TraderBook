@@ -6,6 +6,10 @@ from src.core.logging_setup import logger
 def initialize_files():
     """Инициализация файлов trades.csv, setups.csv и groups.csv с нужными колонками."""
     try:
+        # Создаём всю структуру папок если не существует
+        from src.core.paths import ensure_user_data_dir, load_user_data_dir
+        ensure_user_data_dir(load_user_data_dir())
+        
         # Инициализация trades.csv
         if not os.path.exists(TRADES_FILE):
             trades_df = pd.DataFrame(columns=TRADES_COLUMNS)
